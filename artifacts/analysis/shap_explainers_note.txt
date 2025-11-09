@@ -1,0 +1,3 @@
+SHAP summary (beeswarm) -> global feature influence across dataset.
+Waterfall -> local breakdown for a single sample.
+Now generated top-5 waterfalls per model (largest absolute prediction errors).
