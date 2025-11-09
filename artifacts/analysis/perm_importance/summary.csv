@@ -1,5 +1,5 @@
 Model,Top1
 LightGBM,month
-Linear,Dhading_Rainfall_MM
+Linear,Hilly_Rainfall_MM
 RandomForest,month
 XGBoost,month
