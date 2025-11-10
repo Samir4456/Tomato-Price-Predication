@@ -1,5 +1,5 @@
 Model,Top1
-LightGBM,month
-Linear,Hilly_Rainfall_MM
-RandomForest,month
-XGBoost,month
+LightGBM,month_sin
+Linear,Sarlahi_Temperature
+RandomForest,month_sin
+XGBoost,Supply_Volume

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-09T16:46:59.868752",
+  "timestamp": "2025-11-10T14:42:31.888349",
   "input_csv": "artifacts/data/clean_data.csv",
   "target": "Average_Price",
   "features_used": [
@@ -14,10 +14,8 @@
     "Inflation",
     "Kathmandu_Rainfall_MM",
     "Sarlahi_Temperature",
-    "Sarlahi_Precipitation",
     "Sarlahi_Rainfall_MM",
     "Hilly_Temperature",
-    "Hilly_Precipitation",
     "Hilly_Rainfall_MM",
     "day",
     "month",
@@ -38,10 +36,8 @@
     "Inflation",
     "Kathmandu_Rainfall_MM",
     "Sarlahi_Temperature",
-    "Sarlahi_Precipitation",
     "Sarlahi_Rainfall_MM",
     "Hilly_Temperature",
-    "Hilly_Precipitation",
     "Hilly_Rainfall_MM",
     "day",
     "month",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-10T12:47:23.933161",
+  "timestamp": "2025-11-10T16:06:18.080876",
   "input_csv": "artifacts/data/clean_data.csv",
   "target": "Average_Price",
   "features_used": [
@@ -25,7 +25,6 @@
     "month_cos",
     "Average_Price_lag1",
     "Average_Price_lag3",
-    "Average_Price_lag7",
     "Sarlahi_Temperature_lag1",
     "Sarlahi_Temperature_lag3",
     "Sarlahi_Temperature_lag7",
@@ -40,8 +39,8 @@
     "Hilly_Rainfall_MM_lag7",
     "Kathmandu_Rainfall_MM_lag1",
     "Kathmandu_Rainfall_MM_lag2",
-    "Average_Price_rollmean_1",
-    "Average_Price_rollstd_1",
+    "Average_Price_rollmean_3",
+    "Average_Price_rollstd_3",
     "Average_Price_rollmean_7",
     "Average_Price_rollstd_7",
     "Supply_Volume_rollmean_3",

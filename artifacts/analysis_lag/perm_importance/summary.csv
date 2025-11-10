@@ -1,5 +1,5 @@
 Model,Top1
-LightGBM,Average_Price_rollmean_1
-Linear,Average_Price_rollmean_1
-RandomForest,Average_Price_rollmean_1
-XGBoost,Average_Price_rollmean_1
+LightGBM,Average_Price_lag1
+Linear,Average_Price_lag1
+RandomForest,Average_Price_lag1
+XGBoost,Average_Price_lag1
