@@ -1,7 +1,10 @@
+
+
 import pandas as pd
 import numpy as np
 import json
 import os
+
 
 class FeatureEngineer:
     def __init__(self,
@@ -11,8 +14,7 @@ class FeatureEngineer:
         self.roll_config_path = roll_config_path
         self.lag_config = self._load_json(lag_config_path)
         self.roll_config = self._load_json(roll_config_path)
-        self.use_roll_std = False
-        
+
     def _load_json(self, path):
         if os.path.exists(path):
             with open(path, "r") as f:
@@ -35,7 +37,7 @@ class FeatureEngineer:
         return df
 
     # -----------------------------
-    # Apply rolling mean & optional std features
+    # Apply rolling mean features
     # -----------------------------
     def add_rolling_features(self, df):
         df = df.copy()
@@ -43,14 +45,8 @@ class FeatureEngineer:
             if col not in df.columns:
                 continue
             for w in windows:
-                # rolling mean
-                df[f"{col}_rollmean_{w}"] = df[col].rolling(window=w).mean()
-                # rolling std
-                if self.use_roll_std:
-                    df[f"{col}_rollstd_{w}"] = df[col].rolling(window=w).std()
+                df[f"{col}_roll{w}"] = df[col].rolling(window=w).mean()
         print(f"📊 Added rolling features for: {list(self.roll_config.keys())}")
-        if self.use_roll_std:
-            print("📈 Rolling standard deviation features included.")
         return df
 
     # -----------------------------
@@ -64,7 +60,7 @@ class FeatureEngineer:
         df = self.add_lag_features(df)
         df = self.add_rolling_features(df)
 
-        # drop rows with NaN after shifting/rolling
+        # drop rows with NaN after shifting
         df = df.dropna().reset_index(drop=True)
         print(f"✅ Lag/Roll features added. Final shape: {df.shape}")
         return df
