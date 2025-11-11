@@ -1,0 +1,30 @@
+{
+  "Average_Price": [
+    1,
+    3
+  ],
+  "Sarlahi_Temperature": [
+    1,
+    3,
+    7
+  ],
+  "Sarlahi_Rainfall_MM": [
+    1,
+    3,
+    7
+  ],
+  "Hilly_Temperature": [
+    1,
+    3,
+    7
+  ],
+  "Hilly_Rainfall_MM": [
+    1,
+    3,
+    7
+  ],
+  "Kathmandu_Rainfall_MM": [
+    1,
+    2
+  ]
+}

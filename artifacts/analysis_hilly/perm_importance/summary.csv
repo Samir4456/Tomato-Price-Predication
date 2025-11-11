@@ -1,0 +1,5 @@
+Model,Top1
+LightGBM,month_sin
+Linear,Sarlahi_Temperature
+RandomForest,month_sin
+XGBoost,Supply_Volume
