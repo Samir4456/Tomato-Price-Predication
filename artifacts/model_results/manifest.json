@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-11T09:50:51.678367",
+  "timestamp": "2025-11-11T12:21:41.540775",
   "input_csv": "artifacts/data/clean_data.csv",
   "target": "Average_Price",
   "features_used": [
@@ -23,12 +23,12 @@
     "Sarlahi_Air_Pressure",
     "Hilly_Temperature",
     "Hilly_Air_Pressure",
-    "day",
-    "month",
-    "day_of_week",
+    "day_of_month",
     "is_weekend",
     "month_sin",
-    "month_cos"
+    "month_cos",
+    "dow_sin",
+    "dow_cos"
   ],
   "numeric_cols": [
     "Supply_Volume",
@@ -51,12 +51,12 @@
     "Sarlahi_Air_Pressure",
     "Hilly_Temperature",
     "Hilly_Air_Pressure",
-    "day",
-    "month",
-    "day_of_week",
+    "day_of_month",
     "is_weekend",
     "month_sin",
-    "month_cos"
+    "month_cos",
+    "dow_sin",
+    "dow_cos"
   ],
   "cat_cols": [],
   "models_trained": [
