@@ -25,7 +25,17 @@ class DataCleanerLoader:
         self.supply_col = supply_col
 
         # Default remove list if none provided
-        self.remove_cols = remove_cols 
+        self.remove_cols =  [
+        'imported_tomato_price', 'Dhading_Wind_Speed', 'Dhading_Temperature',
+        'Dhading_Precipitation', 'Dhading_Rainfall_MM', 'Dhading_Air_Pressure',"Kathmandu_Temperature",
+        'Kathmandu_Wind_Speed', 'Kathmandu_Precipitation', 'Kathmandu_Air_Pressure',
+        'Kavre_Wind_Speed', 'Kavre_Temperature', 'Kavre_Precipitation',
+        'Kavre_Rainfall_MM', 'Kavre_Air_Pressure',
+        'Sarlahi_Wind_Speed', 'Sarlahi_Precipitation', 'Sarlahi_Air_Pressure',
+        'Hilly_Precipitation', 'Hilly_Wind_Speed', 'Hilly_Air_Pressure'
+        
+    ]
+ 
 
         os.makedirs(os.path.dirname(self.output_path), exist_ok=True)
 
@@ -81,20 +91,17 @@ class DataCleanerLoader:
         as averages across multiple hilly districts."""
         df = df.copy()
 
-        hill_temp_cols = [c for c in df.columns if "Temperature" in c and "Hilly" not in c and "Kathmandu" not in c]
-        hill_rain_cols = [c for c in df.columns if "Rainfall" in c and "Hilly" not in c and "Kathmandu" not in c]
+        df["Hilly_Temperature"] = df[["Dhading_Temperature", "Kavre_Temperature"]].mean(axis=1)
+        df["Hilly_Precipitation"] = df[["Dhading_Precipitation", "Kavre_Precipitation"]].mean(axis=1)
+        df["Hilly_Air_Pressure"] = df[["Dhading_Air_Pressure", "Kavre_Air_Pressure"]].mean(axis=1)
+        df["Hilly_Rainfall_MM"] = df[["Dhading_Rainfall_MM", "Kavre_Rainfall_MM"]].mean(axis=1)
 
-        if hill_temp_cols:
-            df["Hilly_Temperature"] = df[hill_temp_cols].mean(axis=1)
-            print(f"🌡️ Created 'Hilly_Temperature' from: {hill_temp_cols}")
 
-        if hill_rain_cols:
-            df["Hilly_Rainfall_MM"] = df[hill_rain_cols].mean(axis=1)
-            print(f"🌧️ Created 'Hilly_Rainfall_MM' from: {hill_rain_cols}")
+        
 
         # remove individual hilly district columns now that aggregates exist
-        redundant = hill_temp_cols + hill_rain_cols
-        df = df.drop(columns=redundant, errors="ignore")
+        
+        
 
         return df
 
@@ -116,9 +123,9 @@ class DataCleanerLoader:
     # -----------------------------
     def clean_and_save(self):
         df = self.load_raw()
-        df = self.basic_cleaning(df)
         df = self.interpolate_supply(df)
         df = self.add_hilly_features(df)
+        df = self.basic_cleaning(df)
         df = self.finalize(df)
 
         df.to_csv(self.output_path, index=False)
