@@ -1,5 +1,5 @@
 Model,Top1
 LightGBM,month_sin
-Linear,Sarlahi_Temperature
-RandomForest,month_sin
-XGBoost,Supply_Volume
+Linear,Dhading_Air_Pressure
+RandomForest,Kathmandu_Air_Pressure
+XGBoost,month

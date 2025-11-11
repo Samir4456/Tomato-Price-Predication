@@ -25,16 +25,28 @@ class DataCleanerLoader:
         self.supply_col = supply_col
 
         # Default remove list if none provided
-        self.remove_cols =  [
-        'imported_tomato_price', 'Dhading_Wind_Speed', 'Dhading_Temperature',
-        'Dhading_Precipitation', 'Dhading_Rainfall_MM', 'Dhading_Air_Pressure',"Kathmandu_Temperature",
-        'Kathmandu_Wind_Speed', 'Kathmandu_Precipitation', 'Kathmandu_Air_Pressure',
-        'Kavre_Wind_Speed', 'Kavre_Temperature', 'Kavre_Precipitation',
-        'Kavre_Rainfall_MM', 'Kavre_Air_Pressure',
-        'Sarlahi_Wind_Speed', 'Sarlahi_Precipitation', 'Sarlahi_Air_Pressure',
-        'Hilly_Precipitation', 'Hilly_Wind_Speed', 'Hilly_Air_Pressure'
-        
-    ]
+        self.remove_cols =   [
+            'imported_tomato_price',
+            'Dhading_Wind_Speed', 
+            'Dhading_Temperature',
+            'Dhading_Precipitation',
+            # 'Dhading_Rainfall_MM',
+            # 'Dhading_Air_Pressure',
+            'Kathmandu_Wind_Speed', 
+            'Kathmandu_Precipitation', 
+            # 'Kathmandu_Air_Pressure',
+            'Kavre_Wind_Speed', 
+            'Kavre_Temperature', 
+            'Kavre_Precipitation',
+            # 'Kavre_Rainfall_MM', 
+            'Kavre_Air_Pressure',
+            'Sarlahi_Wind_Speed', 
+            'Sarlahi_Precipitation',
+            # 'Sarlahi_Air_Pressure',
+            'Hilly_Precipitation', 
+            'Hilly_Rainfall_MM'
+            # 'Hilly_Air_Pressure'
+        ]
  
 
         os.makedirs(os.path.dirname(self.output_path), exist_ok=True)

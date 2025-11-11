@@ -1,9 +1,41 @@
 {
   "Average_Price": [
     3,
-    7
+    7,
+    14
   ],
   "Supply_Volume": [
+    3,
+    7
+  ],
+  "Sarlahi_Temperature": [
+    3,
+    7
+  ],
+  "Sarlahi_Rainfall_MM": [
+    3,
+    7
+  ],
+  "Hilly_Temperature": [
+    3,
+    7
+  ],
+  "Hilly_Air_Pressure": [
     3
+  ],
+  "Dhading_Rainfall_MM": [
+    3,
+    7
+  ],
+  "Kavre_Rainfall_MM": [
+    3,
+    7
+  ],
+  "Kathmandu_Air_Pressure": [
+    3
+  ],
+  "Kathmandu_Rainfall_MM": [
+    3,
+    7
   ]
 }
